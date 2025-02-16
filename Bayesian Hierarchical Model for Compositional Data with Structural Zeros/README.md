@@ -1,1 +1,4 @@
-Code and Supplementary Material for Chapter 3: Bayesian Hierarchical Model for Compositional Data with Structural Zeros
+
+## Chapter 3: Bayesian Hierarchical Model for Compositional Data with Structural Zeros
+
+Code and Supplementary Material 
