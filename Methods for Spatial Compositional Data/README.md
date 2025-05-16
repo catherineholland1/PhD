@@ -2,7 +2,8 @@
 
 Code and Supplementary Material.
 
-We do not have permissions to share the data within this chapter so the data file is not uploaded here.
+We do not have permissions to share the data within this chapter so the data file is not uploaded here. 
+I have however created a script to simulate spatial compositional proportions which can be used with the uploaded code to fit the framework. The outputted data is located in the `simulated_spatial_compositional_data.rds` file with the R script to produce this in `simulate_data.R`.
 
 
 ### Abstract
