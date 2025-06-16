@@ -171,7 +171,7 @@ larch_gam_bin <- gam(larch/total ~ s(X_coord, Y_coord, k=N_basis), # CHANGED
                      data = missing_tree_data)
 
 Z <- predict(larch_gam_bin,
-             tree_types_data,
+             missing_tree_data,
              type="lpmatrix")
 
 
@@ -415,8 +415,8 @@ run_time <- system.time({samples <- parLapply(cl = this_cluster,
                                               N_types = N_types,
                                               N_basis = N_basis,
                                               
-                                              niter = 20000, 
-                                              nburn = 10000, 
+                                              niter = 10000, 
+                                              nburn =  5000, 
                                               nthin =   10)})
 
 
