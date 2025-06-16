@@ -121,45 +121,29 @@ N_basis = 400
 
 ## GAM MODELS ####
 
-run_time <- system.time({
-  
-  for (i in 1:N_types) {
-  
-  assign(paste0(tree_types[i], "_gam"), 
-         gam(get(paste0(tree_types[i])) / total ~ s(X_coord, Y_coord, k = N_basis), 
-             family = "quasibinomial",
-             weights = missing_tree_data$total,
-             data = missing_tree_data))
-  
-}
-})
-
-run_time
-# 54 seconds - 200
-# 11 mins - 400
-
-
-### MANUALLY ####
-
 larch_gam <- gam(larch / total ~ s(X_coord, Y_coord, k = N_basis),
-                 family = "quasibinomial",
+                 family = quasibinomial(link="logit"),
                  weights = missing_tree_data$total,
-                 data = missing_tree_data)
+                 data = missing_tree_data,
+                 method="REML")
 
 oak_gam <- gam(oak / total ~ s(X_coord, Y_coord, k = N_basis),
-                 family = "quasibinomial",
-                 weights = missing_tree_data$total,
-                 data = missing_tree_data)
+               family = quasibinomial(link="logit"),
+               weights = missing_tree_data$total,
+               data = missing_tree_data,
+               method="REML")
 
 sitka_spruce_gam <- gam(sitka_spruce / total ~ s(X_coord, Y_coord, k = N_basis),
-                        family = "quasibinomial",
+                        family = quasibinomial(link="logit"),
                         weights = missing_tree_data$total,
-                        data = missing_tree_data)
+                        data = missing_tree_data,
+                        method="REML")
 
 sycamore_gam <- gam(sycamore / total ~ s(X_coord, Y_coord, k = N_basis),
-                    family = "quasibinomial",
+                    family = quasibinomial(link="logit"),
                     weights = missing_tree_data$total,
-                    data = missing_tree_data)
+                    data = missing_tree_data,
+                    method="REML")
 
 #######################.
 
